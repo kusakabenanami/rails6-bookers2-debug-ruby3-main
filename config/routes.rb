@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get "home/about"=>"homes#about"
 
+  # 検索機能のルーティング
+  get "search" => "searches#search"
+
   resources :books, only: [:new,:index,:show,:edit,:create,:destroy,:update] do
     resource :favorites, only: [:create, :destroy]
     resources :book_comments, only: [:create, :destroy]
